@@ -27,7 +27,7 @@ First, we need to setup our S3 File Storage to serve our static files and media 
 4. Click on ***Attach Existing Policies Directly***
 5. Click ***Create Policy*** then select ***Create Your Own Policy***
 6. Set Policy Name
-7.  Set Policy Document
+7.  Set Policy Document. Make sure to change the S3 bucket names
 ```
 {
     "Version": "2012-10-17",
@@ -109,7 +109,7 @@ AWS_QUERYSTRING_AUTH = True
 DEFAULT_FILE_STORAGE = '<your-project>.aws.utils.MediaRootS3BotoStorage'
 STATICFILES_STORAGE = '<your-project>.aws.utils.StaticRootS3BotoStorage'
 AWS_STORAGE_BUCKET_NAME = '<your_bucket_name>'
-S3DIRECT_REGION = 'us-west-2'
+S3DIRECT_REGION = 'ap-southeast-1'
 S3_URL = '//%s.s3.amazonaws.com/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_URL = '//%s.s3.amazonaws.com/media/' % AWS_STORAGE_BUCKET_NAME
 MEDIA_ROOT = MEDIA_URL
