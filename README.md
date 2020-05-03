@@ -166,7 +166,7 @@ packages:
     postgresql94-devel: []
 ```
 You can view the full documentation of Justin Mitchel [here](https://www.codingforentrepreneurs.com/blog/s3-static-media-files-for-django).
-## Create your Elastic Beanstalk Environment
+### Create your Elastic Beanstalk Environment
 1. Install your eb command line (eb cli)
 ```
 python -m pip install awsebcli
@@ -193,7 +193,7 @@ ALLOWED_HOSTS = [..., 'project-name.elasticbeanstalk.com']
 ```
 8. Deploy your latest commits using ```eb deploy```. Make sure you've already commited your latest changes to your master branch.
 9. Check if your app is already running in your environment ```eb open```. You can also track your environment status in your Elastic Beanstalk Console in AWS.
-## Setup your Database Server for PostgreSQL
+### Setup your Database Server for PostgreSQL
 1. Run the command ```eb console```
 2. In the menu, select ***Configurations > Databases > Modify***
 3. Pick a number from 5 to 1024 to select the storage capacity of your database.
