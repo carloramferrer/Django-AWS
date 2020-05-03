@@ -1,4 +1,4 @@
-# Django AWS Deployment
+# Django AWS Elastic Beanstalk and S3 File Storage Deployment
 These are detailed steps on how to deploy your Django application on AWS S3 File Storage and Elastic Beanstalk
 ## I. Setup Django and S3 File Storage
 First, we need to setup our S3 File Storage to serve our static files and media files in AWS.
