@@ -20,7 +20,7 @@ First, we need to setup our S3 File Storage to serve our static files and media 
 2. Select the region closest to your area: ***Southeast***
 3. Click next until you finish and leave all as is
     
-### 4. Add Default Access Policies to your IAM User
+### Add Default Access Policies to your IAM User
 1. Navigate to IAM Home
 2. Select user and click on the ***Permissions*** tab
 3. Click ***Add Permissions***
