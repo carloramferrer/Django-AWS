@@ -195,7 +195,31 @@ ALLOWED_HOSTS = [..., 'project-name.elasticbeanstalk.com']
 8. Deploy your latest commits using ```eb deploy```. Make sure you've already commited your latest changes to your master branch.
 9. Check if your app is already running in your environment ```eb open```. You can also track your environment status in your Elastic Beanstalk Console in AWS.
 ### Setup your Database Server for PostgreSQL
-1. Run the command ```eb console```
+1. Change your database settings in ***settings.py***
+```
+# Database
+# https://docs.djangoproject.com/en/2.2/ref/settings/#databases
+
+if 'RDS_DB_NAME' in os.environ:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': os.environ['RDS_DB_NAME'],
+            'USER': os.environ['RDS_USERNAME'],
+            'PASSWORD': os.environ['RDS_PASSWORD'],
+            'HOST': os.environ['RDS_HOSTNAME'],
+            'PORT': os.environ['RDS_PORT'],
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+2. Run the command ```eb console```
 2. In the menu, select ***Configurations > Databases > Modify***
 3. Pick a number from 5 to 1024 to select the storage capacity of your database.
 4. Create a username and password then Click ***Apply***
