@@ -226,7 +226,8 @@ else:
         }
     }
 ```
-2. Run the command ```eb console```
-2. In the menu, select ***Configurations > Databases > Modify***
-3. Pick a number from 5 to 1024 to select the storage capacity of your database.
-4. Create a username and password then Click ***Apply***
+2. In ***settings.py***, change ```DEBUG = True``` to ```DEBUG = False```.
+3. Run the command ```eb console```
+4. In the menu, select ***Configurations > Databases > Modify***
+5. Pick a number from 5 to 1024 to select the storage capacity of your database.
+6. Create a username and password then Click ***Apply***
