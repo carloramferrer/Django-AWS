@@ -173,7 +173,7 @@ You can view the full documentation of Justin Mitchel [here](https://www.codingf
 python -m pip install awsebcli
 eb --version
 ```
-2. Initialize eb cli. Select Python Version 3.6.
+2. Initialize eb cli.
 ```
 eb init 
 ```
@@ -186,7 +186,7 @@ You must provide your credentials.
 ```
 4. Set your application name, platform and SSH key pair. You can use the default **'eb'** name for you application. Next, choose which platform you're using. In our case, choose Python 3.6. Lastly, use the default option for your key pair. If you want to change your settings, you can use ``` eb init -i ```. More documentation for configurations are included in the [AWS Documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html).
 
-5. Create your environment with your project name``` eb create <project-name>``` This command will create your environment with the name you've specified.
+5. Create your environment with your project name``` eb create ``` This command will create your environment with the name you've specified.
 6. Check your environment status ``` eb status ``` and copy the CNAME of your environment.
 7. Copy the CNAME and add this to ALLOWED_HOSTS in your settings.py
 ```
