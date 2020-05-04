@@ -143,9 +143,16 @@ Next, we host our application to AWS Elastic Beanstalk. Elastic Beanstalk is a s
 2. Create a directory called ***.ebextensions*** under the same directory/root of your project folder
 3. Add a configuration file called ***django.config*** and paste the following:
 ```
+container_commands:
+  01_migrate:
+    command: "python manage.py migrate"
+    leader_only: true
+  02_collectstatic:   
+    command: "python manage.py collectstatic --noinput"
 option_settings:
   aws:elasticbeanstalk:container:python:
     WSGIPath: <project-name>/wsgi.py
+    
 ```
 if you have an SSL certificate included add the following as well:
 ```
