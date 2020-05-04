@@ -164,7 +164,7 @@ files:
 ```
 packages:
   yum:
-    postgresql-devel: []
+    postgresql93-devel: []
 ```
 You can view the full documentation of Justin Mitchel [here](https://www.codingforentrepreneurs.com/blog/s3-static-media-files-for-django).
 ### Create your Elastic Beanstalk Environment
@@ -184,7 +184,7 @@ You must provide your credentials.
 (aws-access-id): AKIAJOUAASEXAMPLE
 (aws-secret-key): 5ZRIrtTM4ciIAvd4EXAMPLEDtm+PiPSzpoK
 ```
-4. Set your application name, platform and SSH key pair. You can use the default **'eb'** name for you application. Next, choose which platform you're using. In our case, choose Python 3.6. Lastly, use the default option for your key pair. If you want to change your settings, you can use ``` eb init -i ```. More documentation for configurations are included in the [AWS Documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html).
+4. Set your application name, platform and SSH key pair. You can use the default **'eb'** name for you application. Next, choose which platform you're using. In our case, choose **Python 3.6**. Lastly, use the default option for your key pair. If you want to change your settings, you can use ``` eb init -i ```. More documentation for configurations are included in the [AWS Documentation](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html).
 
 5. Create your environment with your project name``` eb create ``` This command will create your environment with the name you've specified.
 6. Check your environment status ``` eb status ``` and copy the CNAME of your environment.
