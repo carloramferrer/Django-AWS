@@ -140,6 +140,7 @@ Next, we host our application to AWS Elastic Beanstalk. Elastic Beanstalk is a s
 ### Configure Django with PostgreSQL
 1. Create a file for all modules used
 ``` python -m pip freeze > requirements.txt ```
+*Do not include the following modules and comment these out: pywin32, pypiwin32. These are only for windows environment*
 2. Create a directory called ***.ebextensions*** under the same directory/root of your project folder
 3. Add a configuration file called ***django.config*** and paste the following:
 ```
@@ -225,6 +226,11 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
+```
+*In case you do not have psycopg2 installed, install it and include it in your requirements.txt.*
+```
+python -m pip install psycopg2
+python -m pip freeze > requirements.txt
 ```
 2. In ***settings.py***, change ```DEBUG = True``` to ```DEBUG = False```.
 3. Run the command ```eb console```
