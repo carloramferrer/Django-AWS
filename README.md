@@ -200,8 +200,9 @@ You must provide your credentials.
 ```
 ALLOWED_HOSTS = [..., 'project-name.elasticbeanstalk.com']
 ```
-8. Deploy your latest commits using ```eb deploy```. Make sure you've already commited your latest changes to your master branch.
-9. Check if your app is already running in your environment ```eb open```. You can also track your environment status in your Elastic Beanstalk Console in AWS.
+8. Stage and commit your changes for deployment. ```git add . ``` and ```git commit -m "for deployment" ```
+9. Deploy your latest commits using ```eb deploy```. Make sure you've already commited your latest changes to your master branch.
+10.. Check if your app is already running in your environment ```eb open```. You can also track your environment status in your Elastic Beanstalk Console in AWS.
 ### Setup your Database Server for PostgreSQL
 1. Change your database settings in ***settings.py***
 ```
@@ -233,7 +234,8 @@ python -m pip install psycopg2
 python -m pip freeze > requirements.txt
 ```
 2. In ***settings.py***, change ```DEBUG = True``` to ```DEBUG = False```.
-3. Run the command ```eb console```
-4. In the menu, select ***Configurations > Databases > Modify***
-5. Pick a number from 5 to 1024 to select the storage capacity of your database.
-6. Create a username and password then Click ***Apply***
+3. Stage and commit your changes for deployment. ```git add . ``` and ```git commit -m "deploying with postgresql" ```
+4. Run the command ```eb console```
+5. In the menu, select ***Configurations > Databases > Modify***
+6. Pick a number from 5 to 1024 to select the storage capacity of your database.
+7. Create a username and password then Click ***Apply***
